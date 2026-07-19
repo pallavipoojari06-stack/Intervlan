@@ -1,0 +1,45 @@
+"ROUTER ON STICK"
+
+  Commands in switch:
+en
+Conf t 
+
+vlan 10
+name HR
+ex
+
+van 20
+name IT
+ex
+
+int fa0/1
+Switchport mode access 
+switchport access vlan 10
+ex
+
+int fa0/2
+Switchport mode access
+switchport access vlan 20
+ex
+
+int fa0/3
+switchport mode trunk
+ex
+
+ commands in router:
+en
+conf t
+
+int fa0/0
+no shut 
+ex
+
+int fa0/0.1
+encapsulation dot1q 10
+ip add 10.0.0.1 255.0.0.0
+ex
+
+int fa0/0.2
+encapsulation dot1q 20
+ip add 20.0.0.1 255.0.0.0
+ex
