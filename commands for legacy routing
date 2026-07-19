@@ -1,0 +1,53 @@
+"LEGACY ROUTING"
+
+  commands in switch:
+en
+Conf t 
+
+vlan 10
+name HR
+ex
+
+van 20
+name IT
+ex
+
+int fa0/1
+Switchport mode access 
+switchport access vlan 10
+ex
+
+int fa0/2
+Switchport mode access
+switchport access vlan 20
+ex
+
+
+int fa 0/3
+switchport mode access
+switchport access vlan lo
+ex
+
+int fa 0/4
+switchport mode access
+switchport access vlan 20.
+ex
+
+do sh vlan.
+
+
+
+   commands in router:
+
+en
+Conft
+
+int fa 0/0
+ip add 10.0.0.1 255.0.0.0
+no shut
+ex
+
+int fa0/1
+ip add 20.0.0.1 255.0.0.0
+no shut
+ex.
